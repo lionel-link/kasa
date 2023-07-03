@@ -1,0 +1,20 @@
+.About-Jumbotron {
+    background-image: url(./../../assets/img/Background-house.jpg);
+    width: 1240px;
+    Height: 415px;
+    border-radius: 25px;
+    margin-top: 50px;
+  }
+
+  .About-card {
+    margin-top: 50px;
+    display: flex;
+  }
+
+  .card-part-one, .card-part-two {
+    padding: 20px;
+  }
+
+  .card-part-one h1 {
+    margin: 0;
+  }

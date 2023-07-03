@@ -1,0 +1,26 @@
+.Menu-navMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Menu-li{
+    list-style-type: none;
+    margin-right: 57px;
+}
+
+.Menu-link {
+    text-decoration: none;
+    color: #FF6060;
+  }
+  
+
+.Menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Menu-LogoConatainer {
+    flex: 1 0;
+  }

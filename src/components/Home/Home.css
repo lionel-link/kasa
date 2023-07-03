@@ -1,0 +1,8 @@
+
+.Home-mainJumbotron {
+  background-image: url(./../../assets/img/bord-mer.jpg);
+  width: 1240px;
+  Height: 223px;
+  border-radius: 25px;
+  opacity: 0.7
+}

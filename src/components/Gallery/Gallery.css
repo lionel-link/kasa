@@ -1,0 +1,30 @@
+.Gallery-container {
+    margin-top: 43px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 25rem;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.Gallery-cardImg {
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+}
+
+.Gallery-card {
+    width: 340px;
+    height: 340px;
+}
+
+.Gallery-cardTitle {
+    width: 300px;
+    color: white;
+    position: relative;
+    bottom: 60px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
