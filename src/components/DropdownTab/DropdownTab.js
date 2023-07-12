@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './DropdownTab.css';
 import ArrowTop from './../../assets/img/arrow-top.png';
 
-function DropdownTab({ tab }) {
+function DropdownTab({ title, children }) {
   const [open, setOpen] = useState(true);
 
   function handleToggle(event) {
@@ -22,10 +22,10 @@ function DropdownTab({ tab }) {
     <div className={`DropdownTab ${open ? 'DropdownTab--open' : ''}`}>
       {/* eslint-disable-next-line */}
       <a href="#" className="DropdownTab__header " onClick={handleToggle}>
-        <span>{tab.header}</span>
+        <span>{title}</span>
         <img src={ArrowTop} alt="" />
       </a>
-      <div className="DropdownTab__content">{tab.body}</div>
+      <div className="DropdownTab__content">{children}</div>
     </div>
   );
 }
