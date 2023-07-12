@@ -1,0 +1,31 @@
+.Error404 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.Error404__title {
+    color: #FF6060;
+    font-size: 288px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin: 0 auto;
+}
+
+.Error404__subtitle {
+    color: #FF6060;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.Error404__homepage {
+    margin-bottom: 50px;
+    margin: 0 auto;
+}
+.Error404__homepageLink {
+    text-decoration: none;	
+    color: #FF6060;
+    font-size: 18px;
+    font-weight: 500;
+}

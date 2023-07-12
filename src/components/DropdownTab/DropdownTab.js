@@ -1,30 +1,33 @@
-import {useState} from "react";
+import { useState } from 'react';
 import './DropdownTab.css';
 import ArrowTop from './../../assets/img/arrow-top.png';
 
-function DropdownTab({house}) {
-   console.log(house)
-    // const [title, text] = options;
-    const [open, setOpen] = useState(true);
-    function handleToggle (event) {
-        event.preventDefault();
-        setOpen(!open)
-    }
-    
+function DropdownTab({ tab }) {
+  const [open, setOpen] = useState(true);
+
+  function handleToggle(event) {
+    event.preventDefault();
+    setOpen(!open);
+  }
+
+  // if (tab.equipments) {
+  //    content = house.equipments;
+  //    header = 'équipements';
+  // } else {
+  //   content = house.text;
+  //    header = house.header;
+  // }
 
   return (
-    <div className={`DropdownTab ${open ? "DropdownTab--open" : ""}`}>
-        {/* eslint-disable-next-line */} 
+    <div className={`DropdownTab ${open ? 'DropdownTab--open' : ''}`}>
+      {/* eslint-disable-next-line */}
       <a href="#" className="DropdownTab__header " onClick={handleToggle}>
-        <span></span>
+        <span>{tab.header}</span>
         <img src={ArrowTop} alt="" />
       </a>
-      <div className="DropdownTab__content">
-        {/* {house.equipments[0]} */}
-      </div>
+      <div className="DropdownTab__content">{tab.body}</div>
     </div>
   );
 }
-
 
 export default DropdownTab;

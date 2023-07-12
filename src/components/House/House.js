@@ -1,43 +1,86 @@
 import './House.css';
+import Carrousel from '../../assets/img/house-carrousel.jpg';
+import HostPhoto from '../../assets/img/host.png';
+import starActive from '../../assets/img/star-active.png';
+import starInactive from '../../assets/img/star-inactive.png';
 import DropdownTab from './../DropdownTab/DropdownTab';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function House() {
-  FindHouse();
-  const [houses, setHouses] = useState([]);
   const { id } = useParams();
+  const [house, setHouse] = useState({});
+  const [dropdownTabEquipement, setDropdownTabEquipement] = useState({});
+  const [dropdownTabDescription, setDropdownTabDescription] = useState({});
+  const [tags, seTags] = useState([]);
+  const [rating, setRating] = useState([]);
 
-  async function FindHouse() {
-     useEffect(() => {
-        fetch('/data/data.json')
-          .then((response) => response.json())
-          .then((data) => setHouses(data));
-      }, []);
-  }
+  // useEffect(() => {
+  //   fetch('/data/data.json')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const house = data.find((house) => house.id === id);
+  //       setHouse(house);
+  //       dropdownTabDetail = {title:'équipement', content:house.equipements}
+  //     });
+  // }, [id]);
 
-   let house = houses.find((house) => house.id === id);
-
-      //let equipment = house.equipments
-      console.log(house);
-
+  useEffect(() => {
+    const getHouse = async () => {
+      const response = await fetch('/data/data.json');
+      const data = await response.json();
+      const house = data.find((house) => house.id === id);
+      setHouse(house);
+      const equipmentHTML = house.equipments.map((equipment) => <li>{equipment}</li>);
+      setDropdownTabEquipement({ header: 'Équipements', body: equipmentHTML });
+      setDropdownTabDescription({ header: 'Description', body: house.description });
+      let tagsHTML = house.tags.map((tag) => (
+        <button key={tag} className="House__cardPartOne__button">
+          {tag}
+        </button>
+      ));
+      seTags(tagsHTML);
+      let ratingHTML = [];
+      for (let i = 0; i < 5; i++) {
+        if (i < house.rating) {
+          ratingHTML.push(<img key={i} src={starActive} className="House__star" alt="star" />);
+        } else {
+          ratingHTML.push(<img key={i} src={starInactive} className="House__star" alt="star" />);
+        }
+      }
+      console.log(ratingHTML);
+      setRating(ratingHTML);
+    };
+    getHouse();
+  }, [id]);
 
   return (
-    <div className="About-container">
-      <div className="About-Jumbotron"></div>
-      <div className="About-card">
-        <div className="card-part-one">
-          <h1 className="partOne-title">Cozy loft on the Canal Saint-Martin</h1>
-          <span className="partOne-span">Paris, Île-de-France</span>
-          <div className="=partOne-buttonContainer">
-            <button className="card-button">Cozy</button>
-            <button className="card-button">Canal</button>
-            <button className="card-button">Paris 10</button>
-          </div>
-          <div className="partOne-description"></div>
+    <div className="House">
+      <div className="House__carrousel">
+        <img src={Carrousel} alt="" />
+      </div>
+      <div className="House__about">
+        <div className="House__cardPartOne">
+          <h1 className="House__cardPartOne__title">{house.title}</h1>
+          <span className="House__cardPartOne__subTitle">{house.location}</span>
+          <div className="House__cardPartOne__buttonContainer">{tags}</div>
         </div>
-        <div className="card-part-two">
-          <DropdownTab house={house} />
+        <div className="House__cardPartTwo">
+          <div className="House__cardPartTwo__hostContainer">
+            <div className="House__cardPartTwo__hostName">Alexandre Dumas</div>
+            <div className="House__cardPartTwo__hostImg">
+              <img src={HostPhoto} alt="pic de l'hôte" />
+            </div>
+          </div>
+          <div className="House__cardPartTwo__rating">{rating}</div>
+        </div>
+      </div>
+      <div className="House__DropdownTabContainer">
+        <div className="House__DropdownTab">
+          <DropdownTab tab={dropdownTabDescription} />
+        </div>
+        <div className="House__DropdownTab">
+          <DropdownTab tab={dropdownTabEquipement} />
         </div>
       </div>
     </div>

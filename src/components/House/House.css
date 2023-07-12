@@ -1,0 +1,84 @@
+.House {
+    margin-bottom: 20px;
+}
+
+.House__cardPartOne__title {
+    size: 36px;
+    color: #FF6060;
+    font-weight: 500;
+    line-height: 5px
+}
+.House__cardPartOne__subTitle {
+    size: 18px;
+    color: #FF6060;
+    font-weight: 500;
+    line-height: 5px;
+}
+
+.House__carrousel{
+    margin: 20px 0;
+}
+
+.House__about {
+    display: flex;
+}
+
+.House__cardPartOne{
+    flex-basis: 80%;
+}
+.House__cardPartTwo{
+    flex-basis: 20%;
+}
+
+.House__cardPartTwo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.House__cardPartOne__buttonContainer{
+    margin: 20px 0;
+}
+
+.House__cardPartOne__button {
+    size:14px;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: #FF6060;
+    border: none;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.House__cardPartTwo {
+    flex-direction: column;
+}
+
+.House__cardPartTwo__hostContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.House__cardPartTwo__hostName {
+    color: #FF6060;
+    font-size: 18px;
+    width: 45px;
+    font-weight: 500;
+    margin-right: 50px;
+}
+
+.House__DropdownTabContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.House__cardPartTwo__rating {
+    display: flex;
+    justify-content: flex-end;
+    margin:10px 0 20px 0;
+}
+
+.House__DropdownTabContainer * {
+    width: 582px;
+}
