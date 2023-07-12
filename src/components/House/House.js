@@ -9,50 +9,35 @@ import { useEffect, useState } from 'react';
 
 function House() {
   const { id } = useParams();
-  const [house, setHouse] = useState({});
-  const [dropdownTabEquipement, setDropdownTabEquipement] = useState({});
-  const [dropdownTabDescription, setDropdownTabDescription] = useState({});
-  const [tags, seTags] = useState([]);
-  const [rating, setRating] = useState([]);
-
-  // useEffect(() => {
-  //   fetch('/data/data.json')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       const house = data.find((house) => house.id === id);
-  //       setHouse(house);
-  //       dropdownTabDetail = {title:'équipement', content:house.equipements}
-  //     });
-  // }, [id]);
+  const [house, setHouse] = useState();
 
   useEffect(() => {
     const getHouse = async () => {
       const response = await fetch('/data/data.json');
       const data = await response.json();
       const house = data.find((house) => house.id === id);
+
       setHouse(house);
-      const equipmentHTML = house.equipments.map((equipment) => <li>{equipment}</li>);
-      setDropdownTabEquipement({ header: 'Équipements', body: equipmentHTML });
-      setDropdownTabDescription({ header: 'Description', body: house.description });
-      let tagsHTML = house.tags.map((tag) => (
-        <button key={tag} className="House__cardPartOne__button">
-          {tag}
-        </button>
-      ));
-      seTags(tagsHTML);
-      let ratingHTML = [];
-      for (let i = 0; i < 5; i++) {
-        if (i < house.rating) {
-          ratingHTML.push(<img key={i} src={starActive} className="House__star" alt="star" />);
-        } else {
-          ratingHTML.push(<img key={i} src={starInactive} className="House__star" alt="star" />);
-        }
-      }
-      console.log(ratingHTML);
-      setRating(ratingHTML);
     };
     getHouse();
   }, [id]);
+
+  if (!house) {
+    return null;
+  }
+
+  let ratingElements = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < house.rating) {
+      ratingElements.push(
+        <img key={i} src={starActive} className="House__star" alt="star" />
+      );
+    } else {
+      ratingElements.push(
+        <img key={i} src={starInactive} className="House__star" alt="star" />
+      );
+    }
+  }
 
   return (
     <div className="House">
@@ -63,7 +48,13 @@ function House() {
         <div className="House__cardPartOne">
           <h1 className="House__cardPartOne__title">{house.title}</h1>
           <span className="House__cardPartOne__subTitle">{house.location}</span>
-          <div className="House__cardPartOne__buttonContainer">{tags}</div>
+          <div className="House__cardPartOne__buttonContainer">
+            {house.tags.map((tag) => (
+              <span key={tag} className="House__cardPartOne__button">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="House__cardPartTwo">
           <div className="House__cardPartTwo__hostContainer">
@@ -72,15 +63,21 @@ function House() {
               <img src={HostPhoto} alt="pic de l'hôte" />
             </div>
           </div>
-          <div className="House__cardPartTwo__rating">{rating}</div>
+          <div className="House__cardPartTwo__rating">{ratingElements}</div>
         </div>
       </div>
       <div className="House__DropdownTabContainer">
         <div className="House__DropdownTab">
-          <DropdownTab tab={dropdownTabDescription} />
+          <DropdownTab title="Description">{house.description}</DropdownTab>
         </div>
         <div className="House__DropdownTab">
-          <DropdownTab tab={dropdownTabEquipement} />
+          <DropdownTab title="Équipements">
+            <ul>
+              {house.equipments.map((equipment) => (
+                <li key={equipment}>{equipment}</li>
+              ))}
+            </ul>
+          </DropdownTab>
         </div>
       </div>
     </div>
