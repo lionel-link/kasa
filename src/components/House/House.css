@@ -69,7 +69,12 @@
 
 .House__DropdownTabContainer {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    gap: 64px;
+}
+
+.House__DropdownTab {
+    width: 50%;
 }
 
 .House__cardPartTwo__rating {
@@ -78,9 +83,6 @@
     margin:10px 0 20px 0;
 }
 
-.House__DropdownTabContainer * {
-    width: 582px;
-}
 
 @media screen and (max-width: 600px) {
     .House__carrousel img{
