@@ -1,8 +1,22 @@
-
-.Home-mainJumbotron {
-  background-image: url(./../../assets/img/bord-mer.jpg);
-  width: 1240px;
+.Home__jumbotron {
+  color: white;
+  font-size: 48px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./../../assets/img/bord-mer.jpg);
+  background-position: center right;
   Height: 223px;
   border-radius: 25px;
-  opacity: 0.7
+}
+
+@media screen and (max-width: 600px) {
+  .Home__jumbotron {
+    width: 100%;
+    font-size: 24px;
+  }
+  .Home__jumbotronText {
+    padding: 0 138px 0 20px;
+}
 }

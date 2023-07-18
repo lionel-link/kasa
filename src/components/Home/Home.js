@@ -18,8 +18,10 @@ function Home(children) {
 
   return (
     <div className="Home">
-        <div className="Home-mainJumbotron">Chez vous, et ailleurs</div>
-        <Gallery houses={houses} />
+      <div className="Home__jumbotron">
+        <div className="Home__jumbotronText">Chez vous, partout et ailleurs</div>
+      </div>
+      <Gallery houses={houses} />
     </div>
   );
 }

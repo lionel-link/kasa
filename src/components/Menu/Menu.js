@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 function Menu() {
   return (
-    <div className="Menu-nav">
-      <ul className="Menu-navMenu">
-        <li className="Menu-li">
-          <Link className="Menu-link" to="/">
+    <div className="Menu">
+      <ul className="Menu__navbar">
+        <li className="Menu__navbarLi">
+          <Link className="Menu__navbarLink" to="/">
             Accueil
           </Link>
         </li>
-        <li className="Menu-li">
-          <Link className="Menu-link" to="/about">
+        <li className="Menu__navbarLi">
+          <Link className="Menu__navbarLink" to="/about">
             A Propos
           </Link>
         </li>

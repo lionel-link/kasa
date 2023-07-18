@@ -21,6 +21,7 @@
 }
 
 .DropdownTab__content {
+    display: none;
     color: #FF6060;
     padding: 30px 12px 20px 20px;
     animation-name: fade-out;
@@ -87,5 +88,18 @@
     }
     100% {
         transform: rotate(180deg)
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .DropdownTab {
+        width: 350px;
+    }
+
+    .DropdownTab__content ul, .DropdownTab__content li{
+        margin: 0;
+        padding: 0;
     }
 }

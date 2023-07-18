@@ -29,3 +29,18 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+@media screen and (max-width: 600px) {
+    .Error404__title {
+        font-size: 100px;
+    }
+
+    .Error404__subtitle {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .Error404__homepageLink {
+        font-size: 14px;
+    }
+}

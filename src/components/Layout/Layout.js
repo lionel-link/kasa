@@ -1,11 +1,13 @@
 import './Layout.css';
-import Header from './../Header/Header.js';
+import Header from './../Header/Header';
+import Footer from './../Footer/Footer';
 
 function Layout({children}) {
   return (
-    <div className="Layout-container">
+    <div className="Layout">
       <Header />
-      <main className="Home-main">{children}</main>
+      <main className='Layout__main'>{children}</main>
+      <Footer />
     </div>
   );
 }

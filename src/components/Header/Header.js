@@ -4,9 +4,9 @@ import logo from './../../logo.png';
 
 function Header() {
     return (
-        <header className="Menu-header">
-        <div className="Menu-LogoConatainer">
-          <img src={logo} className="logo" alt="" />
+        <header className="Header">
+        <div className="Header__Container">
+          <img className="Header__logo" src={logo} alt="" />
         </div>
         <Menu />
       </header>

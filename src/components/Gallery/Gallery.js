@@ -1,18 +1,15 @@
 import './Gallery.css';
 import { Link } from 'react-router-dom';
-import House from './../House/House';
 
 function Gallery({ houses }) {
   const arrayDataItems = houses.map((house) => (
-    <Link key={house.id} to={`/house-detail/${house.id}`}>
-      <div className="Gallery-card">
+    <Link className="Gallery-card" key={house.id} to={`/house-detail/${house.id}`}>
         <img className="Gallery-cardImg" src={house.cover} alt="" />
         <div className="Gallery-cardTitle">{house.title}</div>
-      </div>
     </Link>
   ));
 
-  return <div className="Gallery-container">{arrayDataItems}</div>;
+  return <div className="Gallery">{arrayDataItems}</div>;
 }
 
 export default Gallery;

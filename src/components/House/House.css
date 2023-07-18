@@ -3,13 +3,12 @@
 }
 
 .House__cardPartOne__title {
-    size: 36px;
+    font-size: 36px;
     color: #FF6060;
     font-weight: 500;
-    line-height: 5px
 }
 .House__cardPartOne__subTitle {
-    size: 18px;
+    font-size: 18px;
     color: #FF6060;
     font-weight: 500;
     line-height: 5px;
@@ -81,4 +80,75 @@
 
 .House__DropdownTabContainer * {
     width: 582px;
+}
+
+@media screen and (max-width: 600px) {
+    .House__carrousel img{
+        width: 100%;
+    }
+
+    .House__about {
+         display: block;
+    }
+
+    .House__carrousel {
+        margin: 0px;
+    }
+
+    .House__cardPartOne__title {
+        font-size: 18px;
+        width: 300px;
+    }
+
+    .House__cardPartOne__subTitle {
+        font-size: 14px;
+    }
+
+    .House__cardPartOne__buttonContainer {
+        margin: 10px 0 20px 0;
+    }
+
+    .House__cardPartOne__title {
+        font-size: 18px;
+        width: 300px;
+        margin-bottom: 5px;
+    }
+
+    .House__cardPartOne__button {
+        font-size: 10px;
+    }
+    .House__cardPartTwo {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content:space-between;
+    }
+
+    .House__cardPartTwo__rating {
+
+    }
+    .House__cardPartTwo__rating img{
+        width: 18px;
+        height: 18px;
+    }
+
+    .House__cardPartTwo__hostContainer{
+        margin-right: 5px;
+    }
+
+    .House__cardPartTwo__hostName {
+        font-size: 12px;
+        margin-right: 25px;
+    }
+    .House__cardPartTwo__hostImg img {
+        width: 32px;
+        height: 32px;
+    }
+    .House__DropdownTabContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .House__DropdownTabContainer * {
+        width: 330px;
+    }
 }
