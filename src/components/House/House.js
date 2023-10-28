@@ -1,5 +1,5 @@
 import './House.css';
-import Carrousel from '../../assets/img/house-carrousel.jpg';
+import Carrousel from '../Carrousel/Carrousel';
 import HostPhoto from '../../assets/img/host.png';
 import starActive from '../../assets/img/star-active.png';
 import starInactive from '../../assets/img/star-inactive.png';
@@ -53,7 +53,7 @@ function House() {
   return (
     <div className="House">
       <div className="House__carrousel">
-        <img src={Carrousel} alt="" />
+        <Carrousel gallery={house.pictures}/>
       </div>
       <div className="House__about">
         <div className="House__cardPartOne">

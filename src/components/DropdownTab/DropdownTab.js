@@ -3,7 +3,7 @@ import './DropdownTab.css';
 import ArrowTop from './../../assets/img/arrow-top.png';
 
 function DropdownTab({ title, children }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   function handleToggle(event) {
     event.preventDefault();

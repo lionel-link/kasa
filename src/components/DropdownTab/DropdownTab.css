@@ -23,6 +23,7 @@
 .DropdownTab__content {
     display: none;
     color: #FF6060;
+    min-height: 150px;
     padding: 30px 12px 20px 20px;
     animation-name: fade-out;
     animation-duration: .5s;
@@ -94,9 +95,6 @@
 
 
 @media screen and (max-width: 600px) {
-    .DropdownTab {
-        width: 350px;
-    }
 
     .DropdownTab__content ul, .DropdownTab__content li{
         margin: 0;

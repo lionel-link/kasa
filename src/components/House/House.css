@@ -148,9 +148,9 @@
     .House__DropdownTabContainer {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
-
-    .House__DropdownTabContainer * {
-        width: 330px;
+    .House__DropdownTab {
+        width: 100%;
     }
 }
