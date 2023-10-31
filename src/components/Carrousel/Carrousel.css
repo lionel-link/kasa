@@ -3,8 +3,9 @@
     width: 1240px;
     height: 415px;
 }
+
 .lightbox:focus {
-    outline: 3px solid red;   
+    outline: 3px solid red;
 }
 
 .lightbox__next,
@@ -52,6 +53,43 @@
     object-fit: cover;
     animation: lightboxIn 0.5s;
 }
+
+.lightbox__length {
+    color: white;
+    display: flex;
+  align-items: end;
+  position: relative;
+  right: 630px;
+  bottom: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .lightbox,
+    .lightbox__container {
+        width: inherit;
+        margin: 0
+    }
+    .lightbox__preview{
+        left: 10px;
+    }
+    .lightbox__next {
+        right: 30px;
+    }
+    .House__DropdownTabContainer {
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+    .lightbox__length {
+        right: 160px;
+      }
+    
+}
+
+
+
 
 @keyframes lightboxIn {
     from {

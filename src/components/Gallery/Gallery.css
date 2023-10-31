@@ -12,6 +12,7 @@
     width: 340px;
     height: 340px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .Gallery-card {

@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import './Carrousel.css';
 
 function Carousel({gallery}) {
-  console.log(gallery)
 
   const refarrowleft = useRef();
   const refarrowright = useRef();
@@ -66,6 +65,7 @@ function Carousel({gallery}) {
       <button ref={refarrowright}className="lightbox__preview" onClick={prev}></button>
       <div className="lightbox__container">
         <img className='imgCarrousel' ref={refimagecarroussel} src='' alt='capture de la maison'/>
+        <div className="lightbox__length">{index+1}/{gallery.length}</div>
       </div>
     </div>
   );

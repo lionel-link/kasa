@@ -1,6 +1,5 @@
 import './House.css';
 import Carrousel from '../Carrousel/Carrousel';
-import HostPhoto from '../../assets/img/host.png';
 import starActive from '../../assets/img/star-active.png';
 import starInactive from '../../assets/img/star-inactive.png';
 import DropdownTab from './../DropdownTab/DropdownTab';
@@ -69,9 +68,9 @@ function House() {
         </div>
         <div className="House__cardPartTwo">
           <div className="House__cardPartTwo__hostContainer">
-            <div className="House__cardPartTwo__hostName">Alexandre Dumas</div>
+            <div className="House__cardPartTwo__hostName">{house.host.name}</div>
             <div className="House__cardPartTwo__hostImg">
-              <img src={HostPhoto} alt="pic de l'hôte" />
+              <img className='House__hostImg' src={house.host.picture} alt="pic de l'hôte" />
             </div>
           </div>
           <div className="House__cardPartTwo__rating">{ratingElements}</div>

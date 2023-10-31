@@ -1,5 +1,6 @@
 .DropdownTab {
     margin-bottom: 20px;
+    width: 100%;
 }
 .DropdownTab__header {
     position: relative;
@@ -100,4 +101,5 @@
         margin: 0;
         padding: 0;
     }
+
 }
