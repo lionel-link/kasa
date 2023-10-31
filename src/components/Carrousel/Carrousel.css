@@ -69,14 +69,17 @@
 
     .lightbox,
     .lightbox__container {
-        width: inherit;
+        width: 343px;
         margin: 0
     }
+    .lightbox__container img {
+        width: 343px;
+    }
     .lightbox__preview{
-        left: 10px;
+        left: 0px;
     }
     .lightbox__next {
-        right: 30px;
+        right: 20px;
     }
     .House__DropdownTabContainer {
         gap: 20px;
