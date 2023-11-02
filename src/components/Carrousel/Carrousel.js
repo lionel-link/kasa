@@ -5,6 +5,7 @@ function Carousel({gallery}) {
 
   const refarrowleft = useRef();
   const refarrowright = useRef();
+  const refgallerylength = useRef();
 
   const refimagecarroussel = useRef();
 
@@ -24,6 +25,7 @@ function Carousel({gallery}) {
     if(gallery.length === 1){
       refarrowleft.current.style.display = 'none';
       refarrowright.current.style.display = 'none';
+      refgallerylength.current.style.display = 'none';
     }
   },[index])
 
@@ -65,7 +67,7 @@ function Carousel({gallery}) {
       <button ref={refarrowright}className="lightbox__preview" onClick={prev}></button>
       <div className="lightbox__container">
         <img className='imgCarrousel' ref={refimagecarroussel} src='' alt='capture de la maison'/>
-        <div className="lightbox__length">{index+1}/{gallery.length}</div>
+        <div ref={refgallerylength}className="lightbox__length">{index+1}/{gallery.length}</div>
       </div>
     </div>
   );

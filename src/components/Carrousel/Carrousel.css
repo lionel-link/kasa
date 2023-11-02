@@ -86,7 +86,7 @@
         padding-bottom: 20px;
     }
     .lightbox__length {
-        right: 160px;
+        display: none;
       }
     
 }
